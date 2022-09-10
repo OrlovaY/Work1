@@ -3,25 +3,20 @@
 
 string[] A;
 System.Console.WriteLine("Введите массив строк через пробел");
-string? s = Console.ReadLine();
-A = s.Split(' ');
-var A1 = new string[A.Length];
-var index = 0;
-            foreach (var value in A)
-            {
-                if (value.Length <= 3)
+string? s=Console.ReadLine();
+A=s.Split(' ');
+var A1=new string[A.Length];
+var index=0;
+    foreach (var value in A)
+        {
+            if (value.Length<4)
                 {
-                    A1[index] = value;
-                    index++;
-                    System.Console.Write($"{value} ");
+                  A1[index]=value;
+                  index++;
+                  System.Console.Write($"\"{value}\" ");
                 }
-                else 
-                {
-                    System.Console.WriteLine("Нет");
-                }
-                
-                
-            }
-           
+        }
+System.Console.WriteLine();
+          
 
 
