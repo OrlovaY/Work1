@@ -1,8 +1,8 @@
 ﻿//Написать программу, которая из имеющегося массива строк формирует новый массив 
 //из строк, длина которых меньше, либо равна 3 символам.
-
-string[] A;
 /*
+string[] A;
+
 System.Console.WriteLine("Введите массив строк через пробел");
 string? s=Console.ReadLine();
 A=s.Split(' ');
@@ -20,18 +20,20 @@ var index=0;
 System.Console.WriteLine();
 */
 
-//string[] array1 = new string[4] {"Hello", "2", "world", ":-)"}; 
-string[] Mass1 = new string[3] { "Russia", "Denmark", "Kazan" };
-//string[] array1 = new string[4] { "1234", "1567", "-2", "computer science" };
-string[] Mass2 = new string[Mass1.Length];
-void NewMass(string[] Mass1, string[] Mass2)
+
+string[] A;
+System.Console.WriteLine("Введите массив строк через пробел");
+string? s=Console.ReadLine();
+A=s.Split(' ');
+string[] A1 = new string[A.Length];
+void NewMass(string[] A, string[] A1)
 {
-    int count = 0;
-    for (int i = 0; i < Mass1.Length; i++)
+    int count=0;
+    for (int i=0; i < A.Length; i++)
     {
-        if (Mass1[i].Length <= 3)
+        if (A[i].Length<4)
         {
-            Mass2[count] = Mass1[i];
+            A1[count]=A[i];
             count++;
         }
     }
@@ -40,9 +42,9 @@ void PrintArray(string[] Mass)
 {
     for (int i = 0; i < Mass.Length; i++)
     {
-        Console.Write($"{Mass[i]}");
+        Console.Write($"{Mass[i],3}");
     }
     Console.WriteLine();
 }
-NewMass(Mass1, Mass2);
-PrintArray(Mass2);
+NewMass(A, A1);
+PrintArray(A1);
